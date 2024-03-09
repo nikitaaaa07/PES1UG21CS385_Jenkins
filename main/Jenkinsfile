@@ -2,7 +2,7 @@ pipeline{
   agent any
   
   stages{
-    stage('Clone repository'){
+    stage('Checkout'){
       steps{
         git branch: 'main',
         url:'https://github.com/nikitaaaa07/PES1UG21CS385_Jenkins.git'
@@ -24,6 +24,7 @@ pipeline{
         echo 'deploy'
       }
     }
+  }
     post{
       failure{
         error 'Pipeline failed'
